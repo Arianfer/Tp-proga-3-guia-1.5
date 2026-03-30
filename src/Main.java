@@ -31,6 +31,19 @@ public class Main {
                         Producto::getCategoria,
                         Collectors.maxBy(Comparator.comparing(Producto::getPrecio))
                 ));
+        //Agustin
+        /// EJERCICIO 4
+        System.out.println("\nEjercicio 4");
+        Optional<String> nombreProducto = productos.stream()
+                .filter(p -> p.getCategoria().equals("Deportes"))
+                .filter(p -> p.getStock() > 10)
+                .findFirst()
+                .map(p -> p.getNombre().toLowerCase());
+
+        System.out.println(nombreProducto.orElse("Producto Inexistente"));
+
+
+
 
 
 
