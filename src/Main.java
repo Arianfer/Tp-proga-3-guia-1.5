@@ -42,6 +42,22 @@ public class Main {
 
         System.out.println(nombreProducto.orElse("Producto Inexistente"));
 
+        //Arian
+        ///5.
+
+        Optional<Producto> productoMasBarato = productos.stream()
+                .min(Comparator.comparing(  p -> p.getStock() * p.getPrecio()));
+        System.out.println("PUNTO 5: "+ productoMasBarato);
+
+
+
+
+
+
+
+
+
+
 
 
 
