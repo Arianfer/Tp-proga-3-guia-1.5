@@ -49,7 +49,16 @@ public class Main {
                 .min(Comparator.comparing(  p -> p.getStock() * p.getPrecio()));
         System.out.println("PUNTO 5: "+ productoMasBarato);
 
+        /// EJERCICIO 6
+        System.out.println("\nEjercicio 6");
+        List<String> nombresOrdenados = productos.stream()
+                .filter(p -> p.getStock() > 0)
+                .map(Producto::getNombre)
+                .filter(nombre -> nombre.length() >= 5)
+                .sorted()
+                .collect(Collectors.toList());
 
+        nombresOrdenados.forEach(System.out::println);
 
 
 
